@@ -1,12 +1,33 @@
 :root{
     --fs-xl: clamp(0.9em, 7vw, 2.5rem);
-    --fs-normal: clamp(0.5em, 3vh, 2rem);
+    --fs-normal: clamp(0.5em, 3.25vh, 2.5rem);
 
     --map-size: clamp(90px, 20vw, 225px);
     --button-width: clamp(5em, 20vw, 10rem);
 
     --cats-size: clamp(125px, 20vw, 350px);
+
+    --listdata-width: clamp(40%, 50%, 100%);
 }
+
+@media (max-width: 500px){
+    :root{
+        --map-size: 25vw;
+        --listdata-width: 50vw;
+    }
+}
+
+@media (min-width: 500px){
+    :root{
+        --map-size: clamp(120px,23vw,200px);
+        --listdata-width: clamp(50%, 60% - 30px , 70% - 33px);
+    }
+    #flex-box1{
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
+
 
 
 body{
@@ -41,7 +62,7 @@ body{
 #flex-box1{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -49,7 +70,7 @@ body{
     text-align: left;
     margin: 10pt;
     min-width: 19%;
-    max-width: 200px;
+    max-width: var(--listdata-width);
 }
 
 #map-container{
